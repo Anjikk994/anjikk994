@@ -1,0 +1,70 @@
+This oathserver with database authication 
+
+
+
+this url get Token http://localhost:9191/oauth/token
+
+
+basic authtiaction 
+clientId:mobile
+client-secuirty:pin
+
+payload:
+{
+Application-Content-Type=xwwwformurluncoder
+grant_type=password
+username:krish
+password:kpass
+}
+responces
+------
+{
+    "access_token": "d1ea4878-d6f3-480d-96e1-9d7550813d31",
+    "token_type": "bearer",
+    "refresh_token": "f10382c2-f0b2-498f-b881-713ab278e86d",
+    "expires_in": 2982,
+    "scope": "READ WRITE"
+}
+
+
+
+
+this application acces url
+
+
+http://localhost:9191/oauth/check_token?token=d1ea4878-d6f3-480d-96e1-9d7550813d31
+basic authtiaction 
+clientId:mobile
+client-secuirty:pin
+
+payload:
+{
+Application-Content-Type=xwwwformurluncoder
+grant_type=password
+username:krish
+password:kpass
+}
+
+
+responces
+------
+{
+    "aud": [
+        "inventory",
+        "payment"
+    ],
+    "user_name": "suranga",
+    "scope": [
+        "READ",
+        "WRITE"
+    ],
+    "active": true,
+    "exp": 1590159621,
+    "authorities": [
+        "update_profile",
+        "ROLE_operator",
+        "read_profile"
+    ],
+    "client_id": "mobile"
+}
+
